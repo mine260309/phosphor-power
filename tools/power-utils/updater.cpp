@@ -209,8 +209,9 @@ bool Updater::isReadyToUpdate()
 int Updater::doUpdate()
 {
     // TODO
-    std::vector<uint8_t> data;
-    i2c->read(0x00, 11, data);
+    int32_t data;
+    i2c->read(0xf1, 0x01, data);
+    printf("0x%02x\n", data);
     return 0;
 }
 
